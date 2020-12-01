@@ -55,7 +55,7 @@ var counter = setInterval(function(){
     };
     console.log("questi sono i numeri ricordati " + numeriRicordati);
     console.log("questi sono i numeri sbagliati " + numeriSbagliati);
-    console.log();("hai ricordato " + numeriRicordati.length + "numeri");
+    alert("hai ricordato " + numeriRicordati.length + " numeri");
 
 
 
