@@ -2,7 +2,7 @@
 // Dopo 30 secondi l’utente deve inserire, un prompt alla volta, i numeri che ha visto precedentemente.
 // Una volta inseriti i 5 numeri, il software dice quanti e quali numeri sono stati ricordati.
 
-//1 dobbiamo generare 5 numeri casuali....assegniao la funzione math random ad una variabile.
+//1 dobbiamo generare 5 numeri casuali....assegniamo la funzione math random ad una variabile.
 var casualNumber
 function generatoreNumeri() {
    return Math.floor(Math.random() * 1000) + 1;
@@ -57,12 +57,12 @@ var counter = setInterval(function(){
     console.log("questi sono i numeri sbagliati " + numeriSbagliati);
     alert("hai ricordato " + numeriRicordati.length + " numeri");
 
-
-
   } else {
     seconds--;
   }
 }, 1000);
+
+
 
 
 
