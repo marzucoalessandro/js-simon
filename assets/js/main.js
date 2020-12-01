@@ -33,6 +33,22 @@ var counter = setInterval(function(){
   if (seconds == 0) {
     alert("time-out!! Adesso vediamo quanti numeri ricordi");
     clearInterval(counter);
+
+
+    //adesso chiediamo all'utente di darci 5 numeri ma uno alla volta;
+    //impostiamo un nuovo ciclo.
+    //creiamo un array contenitore dei numeri dell'utente.
+    var arrayUtente = [];
+
+
+    for (var i = 0; i < 5; i++) {
+
+      var domandaUtente = Number(prompt("inserisci un numero di quelli visti prima...."));
+      arrayUtente.push(domandaUtente);
+      console.log(arrayUtente);
+    };
+
+
   } else {
     seconds--;
   }
