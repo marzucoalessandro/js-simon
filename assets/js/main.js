@@ -23,4 +23,17 @@ while (numberPcArray.length < 5) {
   alert("Ecco i numeri da memorizzare " + (numberPcArray));
 
 //a qst punto impostiamo un timer da 30 sec ......
-//dopo ciò chiederemo al nstro utente di darci 5 numeri.
+//dopo ciò chiederemo al nostro utente di darci 5 numeri.
+
+var seconds = 30;
+
+var counter = setInterval(function(){
+
+  //nst condizione per countdown;
+  if (seconds == 0) {
+    alert("time-out!! Adesso vediamo quanti numeri ricordi");
+    clearInterval(counter);
+  } else {
+    seconds--;
+  }
+}, 1000);
