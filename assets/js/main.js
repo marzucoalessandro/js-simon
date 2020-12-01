@@ -7,8 +7,9 @@ var casualNumber
 function generatoreNumeri() {
    return Math.floor(Math.random() * 1000) + 1;
  };
+
 //adesso dobbiamo far generare qst numero x 5 vlt.
-//i risultati della funzione math li mettiamo in un array.
+//i risultati della funzione generatoreNumeri li mettiamo in un array.
 
 var numberPcArray = [];
 //generiamo quindi un ciclo.
@@ -25,7 +26,7 @@ while (numberPcArray.length < 5) {
 //a qst punto impostiamo un timer da 30 sec ......
 //dopo ciò chiederemo al nostro utente di darci 5 numeri.
 
-var seconds = 30;
+var seconds = 5;
 
 var counter = setInterval(function(){
 
@@ -37,19 +38,41 @@ var counter = setInterval(function(){
 
     //adesso chiediamo all'utente di darci 5 numeri ma uno alla volta;
     //impostiamo un nuovo ciclo.
-    //creiamo un array contenitore dei numeri dell'utente.
-    var arrayUtente = [];
-
+    //creiamo un array contenitore dei numeri dell'utente giusti e uno dei numeri sbagliati.
+    var numeriRicordati = [];
+    var numeriSbagliati = [];
 
     for (var i = 0; i < 5; i++) {
-
       var domandaUtente = Number(prompt("inserisci un numero di quelli visti prima...."));
-      arrayUtente.push(domandaUtente);
-      console.log(arrayUtente);
+
+      if (check(numberPcArray, domandaUtente) == true) {
+        console.log("hai ricordato un numero");
+        numeriRicordati.push(domandaUtente);
+      }else {
+        console.log("numero sbagliato");
+        numeriSbagliati.push(domandaUtente);
+      }
     };
+    console.log("questi sono i numeri ricordati " + numeriRicordati);
+    console.log("questi sono i numeri sbagliati " + numeriSbagliati);
+    console.log();("hai ricordato " + numeriRicordati.length + "numeri");
+
 
 
   } else {
     seconds--;
   }
 }, 1000);
+
+
+
+
+//creiamo una funziona che scorre array per vedere se i numeri sono uguali.
+function check(array, numero) {
+    for (var i = 0; i <= 5; i++) {
+      if (array[i] == numero) {
+        return true;
+      }
+    }
+    return false;
+  }
